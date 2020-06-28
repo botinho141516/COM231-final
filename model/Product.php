@@ -8,7 +8,7 @@ class Product
             $name,
             $price;
 
-    private function __construct($id, $category_id, $code, $name, $price){
+    private function __construct($id,$code, $name, $price,$category_id){
         $this->id = $id;
         $this->category_id = $category_id;
         $this->code =  $code;

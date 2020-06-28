@@ -3,9 +3,9 @@
 class Database
 {
     private static $dsn =
-        'pgsql:host=localhost;port=5432;dbname=loja';
+        'pgsql:host=localhost;port=5432;dbname=loja';    
     private static $username = 'postgres';
-    private static $password = 'postgres';
+    private static $password = 'root';
     private static $db;
 
     private function __construct(){
