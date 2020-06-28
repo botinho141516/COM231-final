@@ -15,7 +15,7 @@ class Category
     public static function find($id)
     {
         $db = Database::getDB();
-        $query = 'SELECT * FROM categories WHERE categoryID = :id';
+        $query = 'SELECT * FROM categories WHERE "categoryID" = :id';
         $statement = $db->prepare($query);
         $statement->bindValue(":id", $id);
         $statement->execute();
@@ -30,7 +30,7 @@ class Category
     {
         $db = Database::getDB();
         $query = 'SELECT * FROM categories
-        ORDER BY categoryID';
+        ORDER BY "categoryID"';
         $statement = $db->prepare($query);
         $statement->execute();
         $categories = array();

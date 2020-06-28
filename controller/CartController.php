@@ -72,7 +72,7 @@
                 Order::create(1, date('Y-m-d H:i:s'),$total_price);
 
                 $db = Database::getDB();
-                $query = 'SELECT orderID FROM orders WHERE customerID = :customerID ORDER BY orderDate DESC';
+                $query = 'SELECT orderID FROM orders WHERE "customerID" = :customerID ORDER BY "orderDate" DESC';
                 $statement = $db->prepare($query);
                 $statement->bindValue(':customerID', intVal($_SESSION['user_id']));
                 $statement->execute();

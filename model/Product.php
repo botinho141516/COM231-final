@@ -22,7 +22,7 @@ class Product
     {
         $db = Database::getDB();
         $query = 'SELECT * FROM products
-                  WHERE productID = :id';
+                WHERE "productID" = :id';
         $statement = $db->prepare($query);
         $statement->bindValue(":id", $id);
         $statement->execute();
@@ -37,7 +37,7 @@ class Product
     {
         $db = Database::getDB();
         $query = 'SELECT * FROM products
-        ORDER BY productID';
+        ORDER BY "productID"';
         $statement = $db->prepare($query);
         $statement->execute();
         $products = array();
@@ -53,7 +53,7 @@ class Product
     {
         $db = Database::getDB();
         $query = 'SELECT * FROM products
-        WHERE categoryID = :id ORDER BY productID ';
+        WHERE "categoryID" = :id ORDER BY "productID" ';
         $statement = $db->prepare($query);
         $statement->bindValue(":id", $category_id);
         $statement->execute();
@@ -71,9 +71,9 @@ class Product
     public static function create($category_id, $code, $name, $price){
         $db = Database::getDB();
         $query = 'INSERT INTO products
-                     (categoryID, productCode, productName, listPrice)
-                  VALUES
-                     (:category_id, :code, :name, :price)';
+                    ("categoryID", "productCode", "productName", "listPrice")
+                VALUES
+                    (:category_id, :code, :name, :price)';
         $statement = $db->prepare($query);
         $statement->bindValue(':category_id', intVal($category_id));
         $statement->bindValue(':code', $code);
@@ -85,7 +85,7 @@ class Product
 
     public function delete(){
         $db = Database::getDB();
-        $query = 'DELETE FROM products WHERE productID = :id';
+        $query = 'DELETE FROM products WHERE "productID" = :id';
         $statement = $db->prepare($query);
         $statement->bindValue(':id', $this->id);
         $statement->execute();

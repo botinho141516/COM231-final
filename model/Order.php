@@ -25,7 +25,7 @@ class Order{
 
         $db = Database::getDB();
         $query = 'INSERT INTO orders
-                     (customerID, orderDate, totalAmount)
+                     ("customerID", "orderDate", "totalAmount")
                   VALUES
                      (:customerID, :orderDate, :totalAmount)';
         $statement = $db->prepare($query);

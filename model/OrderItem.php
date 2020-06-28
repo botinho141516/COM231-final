@@ -5,10 +5,10 @@ class OrderItem{
 
     public static function create($orderID, $productID, $itemPrice, $discountAmount, $quantity){
         $db = Database::getDB();
-        $query = 'INSERT INTO orderItems
-                     (orderID, productID,  itemPrice, discountAmount, quantity)
-                  VALUES
-                     (:orderID, :productID,  :itemPrice, :discountAmount, :quantity)';
+        $query = 'INSERT INTO "orderItems"
+                    ("orderID", "productID",  "itemPrice", "discountAmount", quantity)
+                VALUES
+                    (:orderID, :productID,  :itemPrice, :discountAmount, :quantity)';
         $statement = $db->prepare($query);
         $statement->bindValue(':orderID', $orderID);
         $statement->bindValue(':productID', $productID);
