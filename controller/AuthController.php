@@ -24,11 +24,11 @@ class AuthController{
             $_SESSION['user_id'] = $row[0];
             $_SESSION['user_name'] = $row[3];
             echo"<script>alert('Conectado com sucesso!')</script>";
-            // header("Location: ./");
+            header("Location: ./");
         }
         else{
             echo"<script>alert('Email ou senha errados!')</script>";
-            // header("Location: ./?action=auth.loginForm");
+            header("Location: ./?action=auth.loginForm");
         }
 
 

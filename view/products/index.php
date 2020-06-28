@@ -42,6 +42,5 @@
             </tr>
             <?php endforeach; ?>
         </table>
-        <p><a href="?action=product.create">Add Product</a></p>
     </section>
 </main>
